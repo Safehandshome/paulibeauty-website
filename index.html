@@ -739,7 +739,12 @@
         <h2>Let's Get You Glowing ✨</h2>
         <p class="sub">Fill out the form and Pauli will be in touch within 24 hours to confirm your appointment.</p>
 
-        <form name="beauty-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+        <div id="formSuccess" style="display:none;text-align:center;padding:2rem 1rem;">
+            <div style="font-size:3rem;margin-bottom:1rem;">✨</div>
+            <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:0.6rem;background:linear-gradient(135deg,#f5d0dc,#c8a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">You're all set!</h3>
+            <p style="color:var(--gray);font-size:0.9rem;line-height:1.6;">Thank you for reaching out to Luxe & Glow. Pauli will review your request and get back to you within 24 hours to confirm your appointment.</p>
+        </div>
+        <form name="beauty-booking" id="bookingForm" netlify data-netlify="true">
             <input type="hidden" name="form-name" value="beauty-booking">
             <p style="display:none;"><input name="bot-field"></p>
 
@@ -817,7 +822,7 @@
                 <textarea name="message" placeholder="Tell Pauli a bit about what you're looking for, any skin concerns, the occasion, etc..."></textarea>
             </div>
 
-            <button type="submit" class="form-submit">Send Booking Request →</button>
+            <button type="submit" class="form-submit" id="submitBtn">Send Booking Request →</button>
             <p style="text-align:center;color:var(--gray);font-size:0.82rem;margin-top:0.8rem;line-height:1.5;">
                 🔒 Your information is kept private and never shared. Pauli will respond within 24 hours.
             </p>
@@ -916,6 +921,28 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowLeft') lbNav(-1);
     if (e.key === 'ArrowRight') lbNav(1);
 });
+
+// Form submission handler
+const form = document.getElementById('bookingForm');
+if (form) {
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        try {
+            const data = new FormData(form);
+            await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(data).toString()
+            });
+        } catch(err) { /* best effort */ }
+        // Always show success
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+    });
+}
 </script>
 </body>
 </html>

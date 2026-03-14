@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Luxe & Glow</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #080a14;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(125deg, #0d1035cc, #1a1f5599, #3d1a2888, #1a1f5599, #0d1035cc);
+            background-size: 400% 400%;
+            animation: shift 18s ease infinite;
+        }
+        @keyframes shift {
+            0%,100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .card {
+            position: relative;
+            z-index: 1;
+            background: rgba(10,12,30,0.88);
+            border: 1px solid rgba(180,140,200,0.2);
+            border-radius: 22px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            max-width: 480px;
+            margin: 1.5rem;
+            backdrop-filter: blur(12px);
+        }
+        .logo { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(200,120,140,0.5); margin-bottom: 1.5rem; }
+        .check { font-size: 3rem; margin-bottom: 1rem; }
+        h1 { font-size: 1.8rem; font-weight: 900; margin-bottom: 0.6rem;
+            background: linear-gradient(135deg, #f5d0dc, #c8a96e);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        p { color: #aaa; font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.5rem; }
+        a {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a2060, #8a2a45);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+        }
+        a:hover { opacity: 0.85; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="photos/logo.jpg" alt="Luxe & Glow" class="logo">
+        <div class="check">✨</div>
+        <h1>You're all set!</h1>
+        <p>Thank you for reaching out to Luxe & Glow. Pauli will review your request and get back to you within 24 hours to confirm your appointment.</p>
+        <a href="/">← Back to Luxe & Glow</a>
+    </div>
+</body>
+</html>

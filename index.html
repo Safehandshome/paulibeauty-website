@@ -172,7 +172,7 @@
         .card-hero {
             grid-column: span 12;
             min-height: 560px;
-            background-image: url('photos/hero.jpg');
+            background-image: url('photos/makeup1-glam-purple.jpg');
             background-size: cover;
             background-position: center top;
             position: relative;
@@ -636,15 +636,14 @@
         </div>
     </div>
 
-    <!-- GALLERY PLACEHOLDER -->
+    <!-- GALLERY -->
     <div class="section-label" id="gallery">
         <h2><span></span>Gallery<span></span></h2>
     </div>
 
-    <div class="card" style="grid-column:span 12;text-align:center;padding:3rem;border:2px dashed rgba(150,0,255,0.3);">
-        <div style="font-size:2rem;margin-bottom:0.8rem;">📸</div>
-        <div style="font-weight:700;font-size:1.1rem;margin-bottom:0.4rem;">Photos Coming Soon</div>
-        <div style="color:var(--gray);font-size:0.88rem;">Send your photos and they'll be added here right away.</div>
+    <div class="photo-grid-section pg-2">
+        <div class="photo-tile tall" onclick="openLb('gallery',0)"><img src="photos/makeup1-glam-purple.jpg" alt="Glamour makeup - purple smoky eye"></div>
+        <div class="photo-tile tall" onclick="openLb('gallery',1)"><img src="photos/makeup2-bridal.jpg" alt="Bridal makeup - elegant natural glow"></div>
     </div>
 
     <!-- REVIEWS -->
@@ -866,7 +865,12 @@
 </footer>
 
 <script>
-const galleries = {};
+const galleries = {
+    gallery: [
+        {src:'photos/makeup1-glam-purple.jpg', cap:'Glamour look — purple smoky eye'},
+        {src:'photos/makeup2-bridal.jpg', cap:'Bridal / special occasion — natural glow'},
+    ],
+};
 let currentGallery = [], currentIndex = 0;
 
 function openLb(gallery, index) {

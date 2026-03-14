@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauli Hartmann Beauty | Mobile & In-Home Beauty Services | Somerset County, NJ</title>
+    <meta name="description" content="Professional mobile beauty services by Pauli Hartmann. Hair, makeup, color, nails, lashes, brows & more. Serving Somerset County, NJ and surrounding areas. Book your in-home appointment today.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --dark: #0a0008;
+            --card: rgba(20,5,25,0.85);
+            --card2: rgba(25,8,30,0.9);
+            --border: rgba(180,100,255,0.15);
+            --border-bright: rgba(180,100,255,0.4);
+            --white: #ffffff;
+            --gray: #aaa;
+            --text: #ccc;
+            --purple: #9b30ff;
+            --purple-light: #c87cff;
+            --purple-dark: #5a0099;
+            --rose: #ff6eb4;
+        }
+
+        /* === ANIMATED PURPLE BACKGROUND === */
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0a0008;
+            color: var(--white);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background: linear-gradient(
+                125deg,
+                #2d006688,
+                #6600cc55,
+                #9900ff44,
+                #cc00aa44,
+                #ff00aa33,
+                #6600cc55,
+                #2d006688
+            );
+            background-size: 400% 400%;
+            animation: purpleShift 16s ease infinite;
+            pointer-events: none;
+        }
+
+        @keyframes purpleShift {
+            0%   { background-position: 0% 50%; }
+            25%  { background-position: 100% 0%; }
+            50%  { background-position: 100% 100%; }
+            75%  { background-position: 0% 100%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 0;
+            animation: orbFloat 20s ease-in-out infinite;
+        }
+        .orb1 { width: 500px; height: 500px; background: #9900ff; top: -120px; left: -100px; animation-duration: 22s; }
+        .orb2 { width: 400px; height: 400px; background: #ff00aa; top: 25%; right: -80px; animation-duration: 18s; animation-delay: -6s; }
+        .orb3 { width: 450px; height: 450px; background: #6600cc; bottom: 10%; left: 15%; animation-duration: 25s; animation-delay: -12s; }
+        .orb4 { width: 300px; height: 300px; background: #ff66cc; bottom: -50px; right: 10%; animation-duration: 20s; animation-delay: -4s; }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33%       { transform: translate(40px, -60px) scale(1.1); }
+            66%       { transform: translate(-30px, 40px) scale(0.95); }
+        }
+
+        nav, .bento, footer, .lightbox { position: relative; z-index: 1; }
+
+        /* === NAV === */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(10,0,15,0.88);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+        }
+
+        .nav-logo { font-size: 1.1rem; font-weight: 800; }
+        .nav-logo span {
+            background: linear-gradient(90deg, #cc44ff, #ff66cc, #ff99dd, #cc44ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: var(--gray); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--white); }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #7700cc, #aa00ff);
+            color: var(--white);
+            padding: 0.55rem 1.3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid rgba(200,100,255,0.3);
+            transition: opacity 0.2s;
+        }
+        .nav-cta:hover { opacity: 0.85; }
+
+        /* === BENTO GRID === */
+        .bento {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 1.5rem 3rem;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1rem;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 2rem;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+            transition: border-color 0.3s, transform 0.25s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--border-bright);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(150,0,255,0.2);
+        }
+
+        .section-label {
+            grid-column: span 12;
+            padding: 0.5rem 0 0.2rem;
+        }
+        .section-label h2 {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .section-label h2 span {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* === HERO === */
+        .card-hero {
+            grid-column: span 12;
+            min-height: 560px;
+            background-image: url('photos/hero.jpg');
+            background-size: cover;
+            background-position: center top;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 3rem;
+            border-radius: 22px;
+            overflow: hidden;
+        }
+
+        .card-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(10,0,20,0.92) 0%,
+                rgba(10,0,20,0.6) 40%,
+                rgba(10,0,20,0.15) 100%
+            );
+            z-index: 0;
+        }
+
+        .card-hero > * { position: relative; z-index: 1; }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(150,0,255,0.2);
+            border: 1px solid rgba(150,0,255,0.4);
+            color: var(--purple-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .card-hero h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #e8b4ff 50%, #ff99cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-hero p {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-buttons { display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: flex-start; }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #8800ee, #cc00ff);
+            color: white;
+            padding: 0.75rem 1.8rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: 1px solid rgba(200,100,255,0.3);
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.08);
+            color: white;
+            padding: 0.75rem 1.8rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: background 0.2s;
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.14); }
+
+        /* === STAT CARDS === */
+        .card-stat {
+            grid-column: span 2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            padding: 1.5rem 1rem;
+        }
+
+        .stat-label { font-size: 0.7rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
+        .stat-value {
+            font-size: 2.4rem;
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, #cc44ff, #ff66cc, #ffaadd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-sub { font-size: 0.78rem; color: var(--gray); margin-top: 0.2rem; }
+
+        /* === SERVICES === */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+        }
+
+        .service-item {
+            padding: 1rem 1.2rem;
+            background: rgba(150,0,255,0.08);
+            border: 1px solid rgba(150,0,255,0.2);
+            border-radius: 12px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .service-item:hover {
+            border-color: rgba(200,100,255,0.5);
+            background: rgba(150,0,255,0.15);
+        }
+
+        .service-icon { font-size: 1.4rem; margin-bottom: 0.4rem; }
+        .service-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.2rem; }
+        .service-desc { font-size: 0.78rem; color: var(--gray); line-height: 1.4; }
+
+        /* === PHOTO GRID === */
+        .photo-grid-section {
+            grid-column: span 12;
+            display: grid;
+            gap: 0.75rem;
+        }
+        .pg-2 { grid-template-columns: repeat(2, 1fr); }
+        .pg-3 { grid-template-columns: repeat(3, 1fr); }
+        .pg-4 { grid-template-columns: repeat(4, 1fr); }
+
+        .photo-tile {
+            border-radius: 14px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            background: rgba(80,0,120,0.3);
+        }
+        .photo-tile img {
+            width: 100%;
+            min-height: 220px;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .photo-tile.tall img { min-height: 320px; }
+        .photo-tile:hover img { transform: scale(1.04); }
+        .photo-tile::after {
+            content: '⊕';
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            background: rgba(100,0,180,0.4);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .photo-tile:hover::after { opacity: 1; }
+
+        /* === REVIEWS === */
+        .review-card {
+            padding: 1.5rem;
+            background: rgba(80,0,120,0.2);
+            border: 1px solid rgba(150,0,255,0.2);
+            border-radius: 14px;
+        }
+        .review-stars { color: #ffcc44; font-size: 0.9rem; margin-bottom: 0.6rem; }
+        .review-text { color: var(--text); font-size: 0.85rem; line-height: 1.6; margin-bottom: 0.8rem; font-style: italic; }
+        .review-author { font-size: 0.78rem; color: var(--purple-light); font-weight: 600; }
+
+        /* === ABOUT / HOST === */
+        .host-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(150,0,255,0.5);
+            margin-bottom: 1rem;
+            background: rgba(80,0,120,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        /* === BOOKING FORM === */
+        .card-contact { grid-column: span 7; }
+        .card-contact h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.4rem; }
+        .card-contact .sub { color: var(--gray); font-size: 0.88rem; margin-bottom: 1.8rem; }
+
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; font-size: 0.8rem; color: var(--gray); margin-bottom: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(150,0,255,0.25);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            color: var(--white);
+            font-size: 0.9rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--purple);
+        }
+        .form-group select option { background: #1a0025; }
+        .form-group textarea { min-height: 100px; resize: vertical; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, #8800ee, #cc00ff);
+            color: white;
+            border: none;
+            padding: 0.9rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.2s;
+            font-family: inherit;
+        }
+        .form-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+
+        /* === INFO SIDEBAR === */
+        .card-info {
+            grid-column: span 5;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .info-block {
+            padding: 1rem 1.2rem;
+            background: rgba(150,0,255,0.08);
+            border: 1px solid rgba(150,0,255,0.2);
+            border-radius: 12px;
+        }
+        .info-block-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1px; color: var(--purple-light); margin-bottom: 0.4rem; font-weight: 700; }
+        .info-block-value { font-weight: 600; font-size: 0.92rem; }
+
+        /* === LIGHTBOX === */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(5,0,15,0.95);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img { max-width: 90vw; max-height: 80vh; border-radius: 12px; object-fit: contain; }
+        .lb-caption { margin-top: 1rem; color: var(--gray); font-size: 0.85rem; }
+        .lb-counter { color: var(--purple-light); font-size: 0.8rem; margin-top: 0.3rem; }
+        .lb-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2rem; cursor: pointer; color: var(--gray); background: none; border: none; }
+        .lb-prev, .lb-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(150,0,255,0.3); border: 1px solid rgba(150,0,255,0.4); color: white; font-size: 1.5rem; padding: 0.6rem 1rem; border-radius: 10px; cursor: pointer; }
+        .lb-prev { left: 1rem; }
+        .lb-next { right: 1rem; }
+
+        /* === FOOTER === */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.82rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* === MOBILE === */
+        @media (max-width: 1024px) {
+            .card-hero { grid-column: span 12; min-height: 460px; }
+            .card-stat { grid-column: span 2; }
+            .card-contact { grid-column: span 12; }
+            .card-info { grid-column: span 12; flex-direction: row; flex-wrap: wrap; }
+            .services-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .bento { grid-template-columns: 1fr 1fr; gap: 0.75rem; padding: 0 1rem 2rem; }
+            .card-hero, .card-contact, .card-info, .section-label,
+            .photo-grid-section { grid-column: span 2; }
+            .card-stat { grid-column: span 1; }
+            .card-hero { min-height: 420px; }
+            .card-hero h1 { font-size: 2rem; letter-spacing: -0.5px; }
+            .nav-links { display: none; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .pg-3 { grid-template-columns: 1fr 1fr; }
+            .pg-4 { grid-template-columns: 1fr 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+            [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+        }
+
+        @media (max-width: 480px) {
+            .bento { grid-template-columns: 1fr; gap: 0.6rem; padding: 0 0.75rem 2rem; }
+            .card-stat, .card-hero, .card-contact, .card-info,
+            .section-label, .photo-grid-section { grid-column: span 1 !important; }
+            [style*="grid-column:span"] { grid-column: span 1 !important; }
+            [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+            .card-hero { min-height: 380px; }
+            .card-hero h1 { font-size: 1.7rem; }
+            .card-hero p { font-size: 0.88rem; }
+            .hero-buttons { flex-direction: column; }
+            .hero-buttons a { text-align: center; }
+            nav { padding: 0.9rem 1rem; }
+            .nav-logo { font-size: 0.95rem; }
+            .nav-cta { padding: 0.4rem 0.8rem; font-size: 0.78rem; }
+            .card { padding: 1.2rem; border-radius: 14px; }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .pg-2, .pg-3, .pg-4 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+<div class="orb orb4"></div>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-logo">✨ <span>Pauli Hartmann Beauty</span></div>
+    <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#about">About</a>
+        <a href="#book">Book Now</a>
+    </div>
+    <a href="#book" class="nav-cta">Book Now</a>
+</nav>
+
+<div class="bento">
+
+    <!-- HERO -->
+    <div class="card card-hero">
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.8rem;">
+            <div class="hero-badge">📍 Somerset County, NJ</div>
+            <div class="hero-badge" style="background:rgba(255,100,180,0.15);border-color:rgba(255,100,180,0.35);color:#ff99cc;">💄 Makeup Specialist</div>
+            <div class="hero-badge" style="background:rgba(200,100,255,0.15);border-color:rgba(200,100,255,0.35);color:#dd88ff;">🏠 Comes To You</div>
+        </div>
+        <h1>Beauty<br>On Your Terms</h1>
+        <p>Professional beauty services brought to your door. Hair, makeup, color, nails, lashes and more — all in the comfort of your home. Serving Somerset County and surrounding areas.</p>
+        <div class="hero-buttons">
+            <a href="#book" class="btn-primary">Book an Appointment →</a>
+            <a href="#services" class="btn-secondary">See Services</a>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="card card-stat">
+        <div class="stat-label">Experience</div>
+        <div class="stat-value">15+</div>
+        <div class="stat-sub">Years in beauty</div>
+    </div>
+    <div class="card card-stat">
+        <div class="stat-label">Services</div>
+        <div class="stat-value">10+</div>
+        <div class="stat-sub">Offered</div>
+    </div>
+    <div class="card card-stat">
+        <div class="stat-label">Rating</div>
+        <div class="stat-value">5.0</div>
+        <div class="stat-sub">⭐ Client favorite</div>
+    </div>
+    <div class="card card-stat">
+        <div class="stat-label">Area</div>
+        <div class="stat-value" style="font-size:1.6rem;">NJ</div>
+        <div class="stat-sub">Somerset + surrounding</div>
+    </div>
+    <div class="card card-stat">
+        <div class="stat-label">Availability</div>
+        <div class="stat-value" style="font-size:1.4rem;">7</div>
+        <div class="stat-sub">Days a week</div>
+    </div>
+    <div class="card card-stat" style="border-color:rgba(255,100,180,0.25);background:rgba(180,0,120,0.12);">
+        <div class="stat-label">💄 Specialty</div>
+        <div class="stat-value" style="font-size:1.1rem;background:linear-gradient(135deg,#ff66cc,#ffaadd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Make-<br>up</div>
+        <div class="stat-sub">Bridal · Events · Daily</div>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="section-label" id="services">
+        <h2><span></span>Services<span></span></h2>
+    </div>
+
+    <div class="card" style="grid-column:span 12;">
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon">💄</div>
+                <div class="service-name">Makeup</div>
+                <div class="service-desc">Full glam, natural, bridal, events, and everyday looks. Airbrush available.</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">✂️</div>
+                <div class="service-name">Haircuts & Styling</div>
+                <div class="service-desc">Cuts, trims, blowouts, and special occasion styling for all hair types.</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🎨</div>
+                <div class="service-name">Color & Highlights</div>
+                <div class="service-desc">Full color, highlights, balayage, toning, and color correction.</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">💅</div>
+                <div class="service-name">Nails</div>
+                <div class="service-desc">Manicures, pedicures, gel, and nail art in the comfort of your home.</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">👁️</div>
+                <div class="service-name">Lashes & Brows</div>
+                <div class="service-desc">Lash extensions, lash lifts, brow shaping, tinting, and lamination.</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🧖</div>
+                <div class="service-name">Facials & Skincare</div>
+                <div class="service-desc">Cleansing, exfoliating, and hydrating facials customized to your skin type.</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🪮</div>
+                <div class="service-name">Waxing</div>
+                <div class="service-desc">Brow, lip, chin, and full-face waxing for smooth, clean results.</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">👰</div>
+                <div class="service-name">Bridal Packages</div>
+                <div class="service-desc">Complete bridal beauty packages — hair, makeup, and more — for your big day.</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🏠</div>
+                <div class="service-name">Mobile & In-Home</div>
+                <div class="service-desc">Come to you anywhere in Somerset County. No salon required — just you, relaxed.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GALLERY PLACEHOLDER -->
+    <div class="section-label" id="gallery">
+        <h2><span></span>Gallery<span></span></h2>
+    </div>
+
+    <div class="card" style="grid-column:span 12;text-align:center;padding:3rem;border:2px dashed rgba(150,0,255,0.3);">
+        <div style="font-size:2rem;margin-bottom:0.8rem;">📸</div>
+        <div style="font-weight:700;font-size:1.1rem;margin-bottom:0.4rem;">Photos Coming Soon</div>
+        <div style="color:var(--gray);font-size:0.88rem;">Send your photos and they'll be added here right away.</div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="section-label" id="reviews">
+        <h2><span></span>Client Reviews<span></span></h2>
+    </div>
+
+    <div style="grid-column:span 12;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+        <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Pauli is absolutely incredible. She came to my house the morning of my wedding and made me feel like a queen. My makeup stayed perfect all day and night — I got so many compliments. I couldn't imagine my wedding day without her!"</p>
+            <div class="review-author">Sarah M. · Bridgewater, NJ · Bridal Makeup</div>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"I've been going to Pauli for years and she never disappoints. She does my color and highlights and always nails exactly what I'm looking for. The fact that she comes to my house is such a game changer — so convenient and relaxing."</p>
+            <div class="review-author">Jennifer L. · Somerville, NJ · Color & Highlights</div>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Pauli did my makeup for my daughter's quinceañera and I was blown away. She listened to exactly what we wanted and delivered something even more beautiful than we imagined. She is truly gifted and so warm and professional."</p>
+            <div class="review-author">Maria G. · Warren, NJ · Event Makeup</div>
+        </div>
+    </div>
+
+    <div style="grid-column:span 12;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+        <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Best lash extensions I've ever had. Pauli takes her time, is so precise, and made sure I was comfortable the whole time. They lasted weeks and looked natural and beautiful. Booking again immediately!"</p>
+            <div class="review-author">Ashley R. · Basking Ridge, NJ · Lash Extensions</div>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Pauli has been cutting and styling my hair for 5 years. She knows exactly what works for my hair type and always gives me the best blowout. I love that I can just stay home and feel pampered. Highly recommend to anyone!"</p>
+            <div class="review-author">Diane K. · Bernardsville, NJ · Hair & Styling</div>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"I hired Pauli for a girls' night and she did makeup for 6 of us. She was efficient, creative, and made everyone feel special. Every single person looked amazing. She's the real deal — talented, professional, and so much fun!"</p>
+            <div class="review-author">Nicole T. · Flemington, NJ · Group Makeup</div>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="section-label" id="about">
+        <h2><span></span>About Pauli<span></span></h2>
+    </div>
+
+    <div class="card" style="grid-column:span 5;">
+        <div class="host-avatar">👩‍🎨</div>
+        <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:0.5rem;">Pauli Hartmann</h2>
+        <div style="color:var(--purple-light);font-size:0.82rem;font-weight:600;margin-bottom:1rem;">Licensed Cosmetologist · Makeup Artist · Somerset County, NJ</div>
+        <p style="color:var(--text);font-size:0.88rem;line-height:1.7;">
+            With over 15 years of experience in the beauty industry, Pauli Hartmann brings salon-quality expertise directly to your door. Trained and certified in a wide range of beauty disciplines, Pauli has built a loyal clientele across Somerset County through her meticulous attention to detail, warm personality, and commitment to making every client feel confident and beautiful.
+        </p>
+        <p style="color:var(--text);font-size:0.88rem;line-height:1.7;margin-top:0.8rem;">
+            Whether it's a flawless bridal look, a fresh color treatment, or a relaxing in-home facial, Pauli approaches every appointment with professionalism and genuine care. Her mobile service means you enjoy the luxury of a beauty experience on your schedule, in your own space.
+        </p>
+    </div>
+
+    <div class="card" style="grid-column:span 7;display:flex;flex-direction:column;gap:0.8rem;">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem;">Service Area & Details</h3>
+        <div class="info-block">
+            <div class="info-block-label">📍 Primary Area</div>
+            <div class="info-block-value">Somerset County, NJ — Bridgewater, Somerville, Basking Ridge, Warren, Bernards, Bernardsville, Flemington & surrounding towns</div>
+        </div>
+        <div class="info-block">
+            <div class="info-block-label">🚗 Will Travel</div>
+            <div class="info-block-value">Available to travel beyond Somerset County — contact for availability and travel fee details</div>
+        </div>
+        <div class="info-block">
+            <div class="info-block-label">🏠 How It Works</div>
+            <div class="info-block-value">Pauli comes to your home, or you're welcome to visit her. All professional products and tools are brought to you.</div>
+        </div>
+        <div class="info-block">
+            <div class="info-block-label">📅 Availability</div>
+            <div class="info-block-value">7 days a week — mornings, afternoons, and evenings by appointment</div>
+        </div>
+        <div class="info-block" style="background:rgba(255,100,180,0.08);border-color:rgba(255,100,180,0.25);">
+            <div class="info-block-label" style="color:#ff99cc;">👰 Bridal & Events</div>
+            <div class="info-block-value">Early morning availability for weddings and special events — book in advance to secure your date</div>
+        </div>
+    </div>
+
+    <!-- BOOKING -->
+    <div class="section-label" id="book">
+        <h2><span></span>Book an Appointment<span></span></h2>
+    </div>
+
+    <div class="card card-contact">
+        <h2>Let's Get You Glowing ✨</h2>
+        <p class="sub">Fill out the form and Pauli will be in touch within 24 hours to confirm your appointment.</p>
+
+        <form name="beauty-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="beauty-booking">
+            <p style="display:none;"><input name="bot-field"></p>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" name="first_name" placeholder="Jane" required>
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" name="last_name" placeholder="Smith" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="jane@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="phone" placeholder="(908) 555-0100">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Service Requested</label>
+                    <select name="service">
+                        <option value="">Select a service...</option>
+                        <option>Makeup — Full Glam</option>
+                        <option>Makeup — Natural / Everyday</option>
+                        <option>Makeup — Bridal</option>
+                        <option>Makeup — Event / Special Occasion</option>
+                        <option>Haircut & Styling</option>
+                        <option>Blowout</option>
+                        <option>Hair Color</option>
+                        <option>Highlights / Balayage</option>
+                        <option>Nails — Manicure</option>
+                        <option>Nails — Pedicure</option>
+                        <option>Nails — Gel</option>
+                        <option>Lash Extensions</option>
+                        <option>Lash Lift</option>
+                        <option>Brow Shaping / Tinting</option>
+                        <option>Facial / Skincare</option>
+                        <option>Waxing</option>
+                        <option>Bridal Package</option>
+                        <option>Group / Party Booking</option>
+                        <option>Multiple Services</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Date</label>
+                    <input type="date" name="preferred_date">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Location</label>
+                <select name="location_type">
+                    <option value="">Where would you like the service?</option>
+                    <option>Come to my home</option>
+                    <option>Come to Pauli's location</option>
+                    <option>Event venue / other location</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Town / City</label>
+                <input type="text" name="town" placeholder="e.g. Bridgewater, NJ">
+            </div>
+
+            <div class="form-group">
+                <label>Additional Notes</label>
+                <textarea name="message" placeholder="Tell Pauli a bit about what you're looking for, any skin concerns, the occasion, etc..."></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Send Booking Request →</button>
+            <p style="text-align:center;color:var(--gray);font-size:0.82rem;margin-top:0.8rem;line-height:1.5;">
+                🔒 Your information is kept private and never shared. Pauli will respond within 24 hours.
+            </p>
+        </form>
+    </div>
+
+    <div class="card card-info" style="grid-column:span 5;">
+        <div style="font-weight:800;font-size:1.1rem;margin-bottom:1rem;">Quick Info</div>
+        <div class="info-block">
+            <div class="info-block-label">📧 Email</div>
+            <div class="info-block-value">Paulina.hartmann@outlook.com</div>
+        </div>
+        <div class="info-block">
+            <div class="info-block-label">📍 Based In</div>
+            <div class="info-block-value">Somerset County, NJ</div>
+        </div>
+        <div class="info-block">
+            <div class="info-block-label">💳 Payment</div>
+            <div class="info-block-value">Cash, Venmo, Zelle, check accepted</div>
+        </div>
+        <div class="info-block">
+            <div class="info-block-label">📅 Booking</div>
+            <div class="info-block-value">By appointment only — advance booking recommended</div>
+        </div>
+        <div class="info-block" style="background:rgba(150,0,255,0.1);border-color:rgba(150,0,255,0.3);">
+            <div class="info-block-label" style="color:var(--purple-light);">✨ Pro Tip</div>
+            <div class="info-block-value" style="font-size:0.85rem;">Book bridal and event appointments at least 4–6 weeks in advance to secure your date.</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <button class="lb-close" onclick="closeLb()">✕</button>
+    <button class="lb-prev" onclick="lbNav(-1)">‹</button>
+    <img id="lb-img" src="" alt="">
+    <div class="lb-caption" id="lb-caption"></div>
+    <div class="lb-counter" id="lb-counter"></div>
+    <button class="lb-next" onclick="lbNav(1)">›</button>
+</div>
+
+<footer>
+    <div style="margin-bottom:0.4rem;">✨ <strong>Pauli Hartmann Beauty</strong> · Somerset County, NJ</div>
+    <div>Mobile beauty services · Hair · Makeup · Nails · Lashes · Brows · Facials · Waxing</div>
+    <div style="margin-top:0.4rem;font-size:0.78rem;">© 2026 Pauli Hartmann Beauty. All rights reserved.</div>
+</footer>
+
+<script>
+const galleries = {};
+let currentGallery = [], currentIndex = 0;
+
+function openLb(gallery, index) {
+    if (!galleries[gallery]) return;
+    currentGallery = galleries[gallery];
+    currentIndex = index;
+    showLb();
+}
+
+function showLb() {
+    const item = currentGallery[currentIndex];
+    document.getElementById('lb-img').src = item.src;
+    document.getElementById('lb-caption').textContent = item.cap || '';
+    document.getElementById('lb-counter').textContent = (currentIndex + 1) + ' / ' + currentGallery.length;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLb() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function lbNav(dir) {
+    currentIndex = (currentIndex + dir + currentGallery.length) % currentGallery.length;
+    showLb();
+}
+
+document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLb();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') lbNav(-1);
+    if (e.key === 'ArrowRight') lbNav(1);
+});
+</script>
+</body>
+</html>

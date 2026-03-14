@@ -9,26 +9,26 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --dark: #080a14;
-            --card: rgba(10,12,30,0.88);
-            --card2: rgba(12,15,35,0.92);
-            --border: rgba(180,140,200,0.15);
-            --border-bright: rgba(200,160,220,0.4);
+            --dark: #1a1218;
+            --card: rgba(30,20,25,0.88);
+            --card2: rgba(35,25,30,0.92);
+            --border: rgba(126,61,61,0.15);
+            --border-bright: rgba(219,164,146,0.4);
             --white: #ffffff;
             --gray: #aaa;
             --text: #ccc;
-            --navy: #1a1f4e;
-            --navy-light: #2a3070;
-            --rose: #d4748a;
-            --blush: #e8a8b8;
-            --blush-light: #f5d0dc;
-            --gold: #c8a96e;
+            --terracotta: #DBA492;
+            --burgundy: #7E3D3D;
+            --slate: #3E3E58;
+            --rose: #DBA492;
+            --rose-light: #f0cfc5;
+            --white: #FFFFFF;
         }
 
         /* === ANIMATED PURPLE BACKGROUND === */
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: #0a0008;
+            background: #1a1218;
             color: var(--white);
             min-height: 100vh;
             position: relative;
@@ -42,12 +42,12 @@
             z-index: 0;
             background: linear-gradient(
                 125deg,
-                #0d1035cc,
-                #1a1f5599,
-                #2a1a3588,
-                #3d1a2888,
-                #1a1f5599,
-                #0d1035cc
+                #2a1a1acc,
+                #3E3E5899,
+                #7E3D3D44,
+                #DBA49233,
+                #3E3E5899,
+                #2a1a1acc
             );
             background-size: 400% 400%;
             animation: luxeShift 18s ease infinite;
@@ -72,10 +72,10 @@
             z-index: 0;
             animation: orbFloat 20s ease-in-out infinite;
         }
-        .orb1 { width: 500px; height: 500px; background: #c8607a; top: -120px; left: -100px; animation-duration: 22s; }
-        .orb2 { width: 400px; height: 400px; background: #1a2080; top: 25%; right: -80px; animation-duration: 18s; animation-delay: -6s; }
-        .orb3 { width: 450px; height: 450px; background: #8a3050; bottom: 10%; left: 15%; animation-duration: 25s; animation-delay: -12s; }
-        .orb4 { width: 300px; height: 300px; background: #c8a070; bottom: -50px; right: 10%; animation-duration: 20s; animation-delay: -4s; }
+        .orb1 { width: 500px; height: 500px; background: #DBA492; top: -120px; left: -100px; animation-duration: 22s; }
+        .orb2 { width: 400px; height: 400px; background: #3E3E58; top: 25%; right: -80px; animation-duration: 18s; animation-delay: -6s; }
+        .orb3 { width: 450px; height: 450px; background: #7E3D3D; bottom: 10%; left: 15%; animation-duration: 25s; animation-delay: -12s; }
+        .orb4 { width: 300px; height: 300px; background: #DBA492; bottom: -50px; right: 10%; animation-duration: 20s; animation-delay: -4s; }
 
         @keyframes orbFloat {
             0%, 100% { transform: translate(0, 0) scale(1); }
@@ -94,14 +94,14 @@
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            background: rgba(8,10,25,0.92);
+            background: rgba(20,12,16,0.92);
             backdrop-filter: blur(20px);
             z-index: 100;
         }
 
         .nav-logo { font-size: 1.1rem; font-weight: 800; }
         .nav-logo span {
-            background: linear-gradient(90deg, #e8a8b8, #c8a96e, #f5d0dc, #e8a8b8);
+            background: linear-gradient(90deg, #DBA492, #DBA492, #f0cfc5, #DBA492);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -112,14 +112,14 @@
         .nav-links a:hover { color: var(--white); }
 
         .nav-cta {
-            background: linear-gradient(135deg, #1a2060, #8a2a45);
+            background: linear-gradient(135deg, #3E3E58, #7E3D3D);
             color: var(--white);
             padding: 0.55rem 1.3rem;
             border-radius: 8px;
             text-decoration: none;
             font-size: 0.85rem;
             font-weight: 700;
-            border: 1px solid rgba(210,150,170,0.3);
+            border: 1px solid rgba(219,164,146,0.3);
             transition: opacity 0.2s;
         }
         .nav-cta:hover { opacity: 0.85; }
@@ -147,7 +147,7 @@
         .card:hover {
             border-color: var(--border-bright);
             transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(180,100,140,0.2);
+            box-shadow: 0 12px 40px rgba(126,61,61,0.2);
         }
 
         .section-label {
@@ -191,9 +191,9 @@
             inset: 0;
             background: linear-gradient(
                 to top,
-                rgba(8,10,25,0.92) 0%,
-                rgba(8,10,25,0.6) 40%,
-                rgba(8,10,25,0.15) 100%
+                rgba(20,12,16,0.92) 0%,
+                rgba(26,18,24,0.6) 40%,
+                rgba(26,18,24,0.15) 100%
             );
             z-index: 0;
         }
@@ -202,8 +202,8 @@
 
         .hero-badge {
             display: inline-block;
-            background: rgba(180,100,140,0.2);
-            border: 1px solid rgba(180,100,140,0.4);
+            background: rgba(126,61,61,0.2);
+            border: 1px solid rgba(126,61,61,0.4);
             color: var(--blush);
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
@@ -235,14 +235,14 @@
         .hero-buttons { display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: flex-start; }
 
         .btn-primary {
-            background: linear-gradient(135deg, #1a2060, #8a2a45);
+            background: linear-gradient(135deg, #3E3E58, #7E3D3D);
             color: white;
             padding: 0.75rem 1.8rem;
             border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
             font-size: 0.95rem;
-            border: 1px solid rgba(210,150,170,0.3);
+            border: 1px solid rgba(219,164,146,0.3);
             transition: opacity 0.2s, transform 0.2s;
         }
         .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
@@ -277,7 +277,7 @@
             font-size: 2.4rem;
             font-weight: 900;
             line-height: 1;
-            background: linear-gradient(135deg, #d4748a, #c8a96e, #e8c0a0);
+            background: linear-gradient(135deg, #d4748a, #DBA492, #DBA492);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -293,14 +293,14 @@
 
         .service-item {
             padding: 1rem 1.2rem;
-            background: rgba(180,100,140,0.08);
-            border: 1px solid rgba(180,100,140,0.2);
+            background: rgba(126,61,61,0.08);
+            border: 1px solid rgba(126,61,61,0.2);
             border-radius: 12px;
             transition: border-color 0.2s, background 0.2s;
         }
         .service-item:hover {
             border-color: rgba(200,100,255,0.5);
-            background: rgba(180,100,140,0.15);
+            background: rgba(126,61,61,0.15);
         }
 
         .service-icon { font-size: 1.4rem; margin-bottom: 0.4rem; }
@@ -322,7 +322,7 @@
             overflow: hidden;
             cursor: pointer;
             position: relative;
-            background: rgba(30,20,60,0.3);
+            background: rgba(62,62,88,0.3);
         }
         .photo-tile img {
             width: 100%;
@@ -352,8 +352,8 @@
         /* === REVIEWS === */
         .review-card {
             padding: 1.5rem;
-            background: rgba(30,20,60,0.3);
-            border: 1px solid rgba(180,100,140,0.2);
+            background: rgba(62,62,88,0.3);
+            border: 1px solid rgba(126,61,61,0.2);
             border-radius: 14px;
         }
         .review-stars { color: #ffcc44; font-size: 0.9rem; margin-bottom: 0.6rem; }
@@ -366,9 +366,9 @@
             height: 90px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid rgba(180,100,140,0.5);
+            border: 3px solid rgba(126,61,61,0.5);
             margin-bottom: 1rem;
-            background: rgba(30,20,60,0.3);
+            background: rgba(62,62,88,0.3);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -387,7 +387,7 @@
         .form-group textarea {
             width: 100%;
             background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(180,100,140,0.25);
+            border: 1px solid rgba(126,61,61,0.25);
             border-radius: 10px;
             padding: 0.75rem 1rem;
             color: var(--white);
@@ -407,7 +407,7 @@
 
         .form-submit {
             width: 100%;
-            background: linear-gradient(135deg, #1a2060, #8a2a45);
+            background: linear-gradient(135deg, #3E3E58, #7E3D3D);
             color: white;
             border: none;
             padding: 0.9rem;
@@ -430,8 +430,8 @@
 
         .info-block {
             padding: 1rem 1.2rem;
-            background: rgba(180,100,140,0.08);
-            border: 1px solid rgba(180,100,140,0.2);
+            background: rgba(126,61,61,0.08);
+            border: 1px solid rgba(126,61,61,0.2);
             border-radius: 12px;
         }
         .info-block-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1px; color: var(--blush); margin-bottom: 0.4rem; font-weight: 700; }
@@ -453,7 +453,7 @@
         .lb-caption { margin-top: 1rem; color: var(--gray); font-size: 0.85rem; }
         .lb-counter { color: var(--blush); font-size: 0.8rem; margin-top: 0.3rem; }
         .lb-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2rem; cursor: pointer; color: var(--gray); background: none; border: none; }
-        .lb-prev, .lb-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(180,100,140,0.3); border: 1px solid rgba(180,100,140,0.4); color: white; font-size: 1.5rem; padding: 0.6rem 1rem; border-radius: 10px; cursor: pointer; }
+        .lb-prev, .lb-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(126,61,61,0.3); border: 1px solid rgba(126,61,61,0.4); color: white; font-size: 1.5rem; padding: 0.6rem 1rem; border-radius: 10px; cursor: pointer; }
         .lb-prev { left: 1rem; }
         .lb-next { right: 1rem; }
 
@@ -528,7 +528,7 @@
         <a href="#gallery">Gallery</a>
         <a href="#reviews">Reviews</a>
         <a href="#about">About</a>
-        <a href="https://www.instagram.com/paulinahartmannbeauty" target="_blank" style="color:#e8a8b8;">📷 Instagram</a>
+        <a href="https://www.instagram.com/paulinahartmannbeauty" target="_blank" style="color:#DBA492;">📷 Instagram</a>
         <a href="#book">Book Now</a>
     </div>
     <a href="#book" class="nav-cta">Book Now</a>
@@ -540,8 +540,8 @@
     <div class="card card-hero">
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.8rem;">
             <div class="hero-badge">📍 Somerset County, NJ</div>
-            <div class="hero-badge" style="background:rgba(210,140,160,0.15);border-color:rgba(210,140,160,0.35);color:var(--blush-light);">💄 Makeup Specialist</div>
-            <div class="hero-badge" style="background:rgba(210,150,170,0.15);border-color:rgba(210,150,170,0.35);color:#dd88ff;">🏠 Comes To You</div>
+            <div class="hero-badge" style="background:rgba(219,164,146,0.15);border-color:rgba(219,164,146,0.35);color:var(--blush-light);">💄 Makeup Specialist</div>
+            <div class="hero-badge" style="background:rgba(219,164,146,0.15);border-color:rgba(219,164,146,0.35);color:#dd88ff;">🏠 Comes To You</div>
         </div>
         <h1>Beauty<br>On Your Terms</h1>
         <p>Professional beauty services brought to your door. Hair, makeup, color, nails, lashes and more — all in the comfort of your home. Serving Somerset County and surrounding areas.</p>
@@ -577,7 +577,7 @@
         <div class="stat-value" style="font-size:1.4rem;">7</div>
         <div class="stat-sub">Days a week</div>
     </div>
-    <div class="card card-stat" style="border-color:rgba(210,140,160,0.25);background:rgba(100,30,50,0.15);">
+    <div class="card card-stat" style="border-color:rgba(219,164,146,0.25);background:rgba(62,62,88,0.15);">
         <div class="stat-label">💄 Specialty</div>
         <div class="stat-value" style="font-size:1.1rem;background:linear-gradient(135deg,var(--blush),#ffaadd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Make-<br>up</div>
         <div class="stat-sub">Bridal · Events · Daily</div>
@@ -695,7 +695,7 @@
     </div>
 
     <div class="card" style="grid-column:span 5;">
-        <img src="photos/logo.jpg" alt="Luxe & Glow logo" style="width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid rgba(180,100,140,0.5);margin-bottom:1rem;display:block;">
+        <img src="photos/logo.jpg" alt="Luxe & Glow logo" style="width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid rgba(126,61,61,0.5);margin-bottom:1rem;display:block;">
         <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:0.5rem;">Pauli Hartmann</h2>
         <div style="color:var(--blush);font-size:0.82rem;font-weight:600;margin-bottom:1rem;">Licensed Cosmetologist · Makeup Artist · Somerset County, NJ</div>
         <p style="color:var(--text);font-size:0.88rem;line-height:1.7;">
@@ -724,7 +724,7 @@
             <div class="info-block-label">📅 Availability</div>
             <div class="info-block-value">7 days a week — mornings, afternoons, and evenings by appointment</div>
         </div>
-        <div class="info-block" style="background:rgba(210,140,160,0.08);border-color:rgba(210,140,160,0.25);">
+        <div class="info-block" style="background:rgba(219,164,146,0.08);border-color:rgba(219,164,146,0.25);">
             <div class="info-block-label" style="color:var(--blush-light);">👰 Bridal & Events</div>
             <div class="info-block-value">Early morning availability for weddings and special events — book in advance to secure your date</div>
         </div>
@@ -741,7 +741,7 @@
 
         <div id="formSuccess" style="display:none;text-align:center;padding:2rem 1rem;">
             <div style="font-size:3rem;margin-bottom:1rem;">✨</div>
-            <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:0.6rem;background:linear-gradient(135deg,#f5d0dc,#c8a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">You're all set!</h3>
+            <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:0.6rem;background:linear-gradient(135deg,#f0cfc5,#DBA492);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">You're all set!</h3>
             <p style="color:var(--gray);font-size:0.9rem;line-height:1.6;">Thank you for reaching out to Luxe & Glow. Pauli will review your request and get back to you within 24 hours to confirm your appointment.</p>
         </div>
         <form name="beauty-booking" id="bookingForm" netlify data-netlify="true">
@@ -835,9 +835,9 @@
             <div class="info-block-label">📧 Contact</div>
             <div class="info-block-value">Use the booking form — Pauli will respond within 24 hours</div>
         </div>
-        <div class="info-block" style="background:rgba(200,120,140,0.08);border-color:rgba(200,120,140,0.25);">
-            <div class="info-block-label" style="color:#e8a8b8;">📷 Instagram</div>
-            <div class="info-block-value"><a href="https://www.instagram.com/paulinahartmannbeauty" target="_blank" style="color:#e8a8b8;text-decoration:none;">@paulinahartmannbeauty</a></div>
+        <div class="info-block" style="background:rgba(219,164,146,0.08);border-color:rgba(219,164,146,0.25);">
+            <div class="info-block-label" style="color:#DBA492;">📷 Instagram</div>
+            <div class="info-block-value"><a href="https://www.instagram.com/paulinahartmannbeauty" target="_blank" style="color:#DBA492;text-decoration:none;">@paulinahartmannbeauty</a></div>
         </div>
         <div class="info-block">
             <div class="info-block-label">📍 Based In</div>
@@ -851,7 +851,7 @@
             <div class="info-block-label">📅 Booking</div>
             <div class="info-block-value">By appointment only — advance booking recommended</div>
         </div>
-        <div class="info-block" style="background:rgba(180,100,140,0.1);border-color:rgba(180,100,140,0.3);">
+        <div class="info-block" style="background:rgba(126,61,61,0.1);border-color:rgba(126,61,61,0.3);">
             <div class="info-block-label" style="color:var(--blush);">✨ Pro Tip</div>
             <div class="info-block-value" style="font-size:0.85rem;">Book bridal and event appointments at least 4–6 weeks in advance to secure your date.</div>
         </div>
@@ -870,9 +870,9 @@
 </div>
 
 <footer>
-    <div style="margin-bottom:0.8rem;"><img src="photos/logo.jpg" alt="Luxe & Glow" style="height:56px;width:56px;border-radius:50%;object-fit:cover;border:2px solid rgba(180,100,140,0.4);"></div>
+    <div style="margin-bottom:0.8rem;"><img src="photos/logo.jpg" alt="Luxe & Glow" style="height:56px;width:56px;border-radius:50%;object-fit:cover;border:2px solid rgba(126,61,61,0.4);"></div>
     <div style="margin-bottom:0.4rem;"><strong>Luxe & Glow</strong> · Somerset County, NJ</div>
-    <div style="margin-bottom:0.4rem;"><a href="https://www.instagram.com/paulinahartmannbeauty" target="_blank" style="color:#e8a8b8;text-decoration:none;">📷 @paulinahartmannbeauty</a></div>
+    <div style="margin-bottom:0.4rem;"><a href="https://www.instagram.com/paulinahartmannbeauty" target="_blank" style="color:#DBA492;text-decoration:none;">📷 @paulinahartmannbeauty</a></div>
     <div>Mobile beauty services · Hair · Makeup · Nails · Lashes · Brows · Facials · Waxing</div>
     <div style="margin-top:0.4rem;font-size:0.78rem;">© 2026 Luxe & Glow. All rights reserved.</div>
 </footer>

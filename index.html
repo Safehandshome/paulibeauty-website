@@ -533,7 +533,16 @@
     </div>
     <button onclick="toggleLang()" id="lang-btn" style="background:rgba(219,164,146,0.15);border:1px solid rgba(219,164,146,0.4);color:#DBA492;padding:0.4rem 0.9rem;border-radius:20px;font-size:0.8rem;font-weight:700;cursor:pointer;font-family:inherit;margin-right:0.5rem;transition:all 0.2s;">ES</button>
     <a href="#book" class="nav-cta" data-i18n="nav_book">Book Now</a>
+
 </nav>
+
+<!-- LANGUAGE BANNER -->
+<div onclick="toggleLang()" style="cursor:pointer;text-align:center;padding:0.7rem 1rem;background:linear-gradient(135deg,rgba(126,61,61,0.4),rgba(219,164,146,0.3));border-bottom:1px solid rgba(219,164,146,0.25);position:relative;z-index:1;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+    <span style="font-size:0.88rem;font-weight:700;letter-spacing:0.5px;">
+        🌐 <span id="lang-banner-en">This site is available in <strong style="color:#DBA492;">English</strong> and <strong style="color:#DBA492;">Spanish (Español)</strong> — tap here to switch / toca aquí para cambiar</span>
+        <span id="lang-banner-es" style="display:none;">🌐 Este sitio está disponible en <strong style="color:#DBA492;">Español</strong> e <strong style="color:#DBA492;">Inglés (English)</strong> — toca aquí para cambiar / tap here to switch</span>
+    </span>
+</div>
 
 <div class="bento">
 
@@ -1014,6 +1023,9 @@ function toggleLang() {
         }
     });
     document.documentElement.lang = currentLang;
+    // Swap banner text
+    document.getElementById('lang-banner-en').style.display = currentLang === 'en' ? 'inline' : 'none';
+    document.getElementById('lang-banner-es').style.display = currentLang === 'es' ? 'inline' : 'none';
 }
 
 // Form submission handler

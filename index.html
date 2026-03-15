@@ -754,8 +754,12 @@
             <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:0.6rem;background:linear-gradient(135deg,#f0cfc5,#DBA492);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;" data-i18n="form_success_title">You're all set!</h3>
             <p style="color:var(--gray);font-size:0.9rem;line-height:1.6;" data-i18n="form_success_sub">Thank you for reaching out to Luxe & Glow. Pauli will review your request and get back to you within 24 hours to confirm your appointment.</p>
         </div>
-        <form name="beauty-booking" id="bookingForm" netlify data-netlify="true">
-            <input type="hidden" name="form-name" value="beauty-booking">
+        <form name="beauty-booking" id="bookingForm" action="https://formsubmit.co/Paulina.hartmann@outlook.com" method="POST">
+            <input type="hidden" name="_subject" value="New Booking Request — Luxe &amp; Glow">
+            <input type="hidden" name="_autoresponse" value="Hi there! Thanks for reaching out to Luxe &amp; Glow. Pauli received your booking request and will get back to you within 24 hours to confirm your appointment. Can't wait to work with you! — Pauli, Luxe &amp; Glow">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://luxeandglow.netlify.app">
+            <input type="hidden" name="_captcha" value="false">
             <p style="display:none;"><input name="bot-field"></p>
 
             <div class="form-row">
@@ -1028,27 +1032,7 @@ function toggleLang() {
     document.getElementById('lang-banner-es').style.display = currentLang === 'es' ? 'inline' : 'none';
 }
 
-// Form submission handler
-const form = document.getElementById('bookingForm');
-if (form) {
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const btn = document.getElementById('submitBtn');
-        btn.textContent = 'Sending...';
-        btn.disabled = true;
-        try {
-            const data = new FormData(form);
-            await fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(data).toString()
-            });
-        } catch(err) { /* best effort */ }
-        // Always show success
-        form.style.display = 'none';
-        document.getElementById('formSuccess').style.display = 'block';
-    });
-}
+// Form submission — handled by Formsubmit.co (auto-reply enabled)
 </script>
 </body>
 </html>

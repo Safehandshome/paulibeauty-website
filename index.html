@@ -524,14 +524,15 @@
 <nav>
     <div class="nav-logo"><img src="photos/logo.jpg" alt="Luxe & Glow" style="height:42px;width:auto;border-radius:50%;vertical-align:middle;margin-right:0.5rem;"> <span>Luxe & Glow</span></div>
     <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#about">About</a>
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+        <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
+        <a href="#about" data-i18n="nav_about">About</a>
         <a href="https://www.instagram.com/paulinahartmannbeauty" target="_blank" style="color:#DBA492;">📷 Instagram</a>
-        <a href="#book">Book Now</a>
+        <a href="#book" data-i18n="nav_book">Book Now</a>
     </div>
-    <a href="#book" class="nav-cta">Book Now</a>
+    <button onclick="toggleLang()" id="lang-btn" style="background:rgba(219,164,146,0.15);border:1px solid rgba(219,164,146,0.4);color:#DBA492;padding:0.4rem 0.9rem;border-radius:20px;font-size:0.8rem;font-weight:700;cursor:pointer;font-family:inherit;margin-right:0.5rem;transition:all 0.2s;">ES</button>
+    <a href="#book" class="nav-cta" data-i18n="nav_book">Book Now</a>
 </nav>
 
 <div class="bento">
@@ -540,107 +541,107 @@
     <div class="card card-hero">
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.8rem;">
             <div class="hero-badge">📍 Somerset County, NJ</div>
-            <div class="hero-badge" style="background:rgba(219,164,146,0.15);border-color:rgba(219,164,146,0.35);color:var(--blush-light);">💄 Makeup Specialist</div>
-            <div class="hero-badge" style="background:rgba(219,164,146,0.15);border-color:rgba(219,164,146,0.35);color:#dd88ff;">🏠 Comes To You</div>
+            <div class="hero-badge" style="background:rgba(219,164,146,0.15);border-color:rgba(219,164,146,0.35);color:var(--blush-light);" data-i18n="badge_makeup">💄 Makeup Specialist</div>
+            <div class="hero-badge" style="background:rgba(219,164,146,0.15);border-color:rgba(219,164,146,0.35);color:#dd88ff;" data-i18n="badge_mobile">🏠 Comes To You</div>
         </div>
-        <h1>Beauty<br>On Your Terms</h1>
-        <p>Professional beauty services brought to your door. Hair, makeup, color, nails, lashes and more — all in the comfort of your home. Serving Somerset County and surrounding areas.</p>
+        <h1 data-i18n="hero_title">Beauty<br>On Your Terms</h1>
+        <p data-i18n="hero_sub">Professional beauty services brought to your door. Hair, makeup, color, nails, lashes and more — all in the comfort of your home. Serving Somerset County and surrounding areas.</p>
         <div class="hero-buttons">
-            <a href="#book" class="btn-primary">Book an Appointment →</a>
-            <a href="#services" class="btn-secondary">See Services</a>
+            <a href="#book" class="btn-primary" data-i18n="btn_book">Book an Appointment →</a>
+            <a href="#services" class="btn-secondary" data-i18n="btn_services">See Services</a>
         </div>
     </div>
 
     <!-- STATS -->
     <div class="card card-stat">
-        <div class="stat-label">Experience</div>
+        <div class="stat-label" data-i18n="stat_exp_label">Experience</div>
         <div class="stat-value">15+</div>
-        <div class="stat-sub">Years in beauty</div>
+        <div class="stat-sub" data-i18n="stat_exp_sub">Years in beauty</div>
     </div>
     <div class="card card-stat">
-        <div class="stat-label">Services</div>
+        <div class="stat-label" data-i18n="stat_svc_label">Services</div>
         <div class="stat-value">10+</div>
-        <div class="stat-sub">Offered</div>
+        <div class="stat-sub" data-i18n="stat_svc_sub">Offered</div>
     </div>
     <div class="card card-stat">
-        <div class="stat-label">Rating</div>
+        <div class="stat-label" data-i18n="stat_rating_label">Rating</div>
         <div class="stat-value">5.0</div>
-        <div class="stat-sub">⭐ Client favorite</div>
+        <div class="stat-sub" data-i18n="stat_rating_sub">⭐ Client favorite</div>
     </div>
     <div class="card card-stat">
-        <div class="stat-label">Area</div>
+        <div class="stat-label" data-i18n="stat_area_label">Area</div>
         <div class="stat-value" style="font-size:1.6rem;">NJ</div>
-        <div class="stat-sub">Somerset + surrounding</div>
+        <div class="stat-sub" data-i18n="stat_area_sub">Somerset + surrounding</div>
     </div>
     <div class="card card-stat">
-        <div class="stat-label">Availability</div>
+        <div class="stat-label" data-i18n="stat_avail_label">Availability</div>
         <div class="stat-value" style="font-size:1.4rem;">7</div>
-        <div class="stat-sub">Days a week</div>
+        <div class="stat-sub" data-i18n="stat_avail_sub">Days a week</div>
     </div>
     <div class="card card-stat" style="border-color:rgba(219,164,146,0.25);background:rgba(62,62,88,0.15);">
-        <div class="stat-label">💄 Specialty</div>
+        <div class="stat-label" data-i18n="stat_spec_label">💄 Specialty</div>
         <div class="stat-value" style="font-size:1.1rem;background:linear-gradient(135deg,var(--blush),#ffaadd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Make-<br>up</div>
-        <div class="stat-sub">Bridal · Events · Daily</div>
+        <div class="stat-sub" data-i18n="stat_spec_sub">Bridal · Events · Daily</div>
     </div>
 
     <!-- SERVICES -->
     <div class="section-label" id="services">
-        <h2><span></span>Services<span></span></h2>
+        <h2><span></span><span data-i18n="section_services">Services</span><span></span></h2>
     </div>
 
     <div class="card" style="grid-column:span 12;">
         <div class="services-grid">
             <div class="service-item">
                 <div class="service-icon">💄</div>
-                <div class="service-name">Makeup</div>
-                <div class="service-desc">Full glam, natural, bridal, events, and everyday looks. Airbrush available.</div>
+                <div class="service-name" data-i18n="svc1_name">Makeup</div>
+                <div class="service-desc" data-i18n="svc1_desc">Full glam, natural, bridal, events, and everyday looks. Airbrush available.</div>
             </div>
             <div class="service-item">
                 <div class="service-icon">✂️</div>
-                <div class="service-name">Haircuts & Styling</div>
-                <div class="service-desc">Cuts, trims, blowouts, and special occasion styling for all hair types.</div>
+                <div class="service-name" data-i18n="svc2_name">Haircuts & Styling</div>
+                <div class="service-desc" data-i18n="svc2_desc">Cuts, trims, blowouts, and special occasion styling for all hair types.</div>
             </div>
             <div class="service-item">
                 <div class="service-icon">🎨</div>
-                <div class="service-name">Color & Highlights</div>
-                <div class="service-desc">Full color, highlights, balayage, toning, and color correction.</div>
+                <div class="service-name" data-i18n="svc3_name">Color & Highlights</div>
+                <div class="service-desc" data-i18n="svc3_desc">Full color, highlights, balayage, toning, and color correction.</div>
             </div>
             <div class="service-item">
                 <div class="service-icon">💅</div>
-                <div class="service-name">Nails</div>
-                <div class="service-desc">Manicures, pedicures, gel, and nail art in the comfort of your home.</div>
+                <div class="service-name" data-i18n="svc4_name">Nails</div>
+                <div class="service-desc" data-i18n="svc4_desc">Manicures, pedicures, gel, and nail art in the comfort of your home.</div>
             </div>
             <div class="service-item">
                 <div class="service-icon">👁️</div>
-                <div class="service-name">Lashes & Brows</div>
-                <div class="service-desc">Lash extensions, lash lifts, brow shaping, tinting, and lamination.</div>
+                <div class="service-name" data-i18n="svc5_name">Lashes & Brows</div>
+                <div class="service-desc" data-i18n="svc5_desc">Lash extensions, lash lifts, brow shaping, tinting, and lamination.</div>
             </div>
             <div class="service-item">
                 <div class="service-icon">🧖</div>
-                <div class="service-name">Facials & Skincare</div>
-                <div class="service-desc">Cleansing, exfoliating, and hydrating facials customized to your skin type.</div>
+                <div class="service-name" data-i18n="svc6_name">Facials & Skincare</div>
+                <div class="service-desc" data-i18n="svc6_desc">Cleansing, exfoliating, and hydrating facials customized to your skin type.</div>
             </div>
             <div class="service-item">
                 <div class="service-icon">🪮</div>
-                <div class="service-name">Waxing</div>
-                <div class="service-desc">Brow, lip, chin, and full-face waxing for smooth, clean results.</div>
+                <div class="service-name" data-i18n="svc7_name">Waxing</div>
+                <div class="service-desc" data-i18n="svc7_desc">Brow, lip, chin, and full-face waxing for smooth, clean results.</div>
             </div>
             <div class="service-item">
                 <div class="service-icon">👰</div>
-                <div class="service-name">Bridal Packages</div>
-                <div class="service-desc">Complete bridal beauty packages — hair, makeup, and more — for your big day.</div>
+                <div class="service-name" data-i18n="svc8_name">Bridal Packages</div>
+                <div class="service-desc" data-i18n="svc8_desc">Complete bridal beauty packages — hair, makeup, and more — for your big day.</div>
             </div>
             <div class="service-item">
                 <div class="service-icon">🏠</div>
-                <div class="service-name">Mobile & In-Home</div>
-                <div class="service-desc">Come to you anywhere in Somerset County. No salon required — just you, relaxed.</div>
+                <div class="service-name" data-i18n="svc9_name">Mobile & In-Home</div>
+                <div class="service-desc" data-i18n="svc9_desc">Come to you anywhere in Somerset County. No salon required — just you, relaxed.</div>
             </div>
         </div>
     </div>
 
     <!-- GALLERY -->
     <div class="section-label" id="gallery">
-        <h2><span></span>Gallery<span></span></h2>
+        <h2><span></span><span data-i18n="section_gallery">Gallery</span><span></span></h2>
     </div>
 
     <div class="photo-grid-section pg-2">
@@ -650,7 +651,7 @@
 
     <!-- REVIEWS -->
     <div class="section-label" id="reviews">
-        <h2><span></span>Client Reviews<span></span></h2>
+        <h2><span></span><span data-i18n="section_reviews">Client Reviews</span><span></span></h2>
     </div>
 
     <div style="grid-column:span 12;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
@@ -691,58 +692,58 @@
 
     <!-- ABOUT -->
     <div class="section-label" id="about">
-        <h2><span></span>About Pauli<span></span></h2>
+        <h2><span></span><span data-i18n="section_about">About Pauli</span><span></span></h2>
     </div>
 
     <div class="card" style="grid-column:span 5;">
         <img src="photos/logo.jpg" alt="Luxe & Glow logo" style="width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid rgba(126,61,61,0.5);margin-bottom:1rem;display:block;">
         <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:0.5rem;">Pauli Hartmann</h2>
-        <div style="color:var(--blush);font-size:0.82rem;font-weight:600;margin-bottom:1rem;">Licensed Cosmetologist · Makeup Artist · Somerset County, NJ</div>
-        <p style="color:var(--text);font-size:0.88rem;line-height:1.7;">
+        <div style="color:var(--blush);font-size:0.82rem;font-weight:600;margin-bottom:1rem;" data-i18n="about_title">Licensed Cosmetologist · Makeup Artist · Somerset County, NJ</div>
+        <p style="color:var(--text);font-size:0.88rem;line-height:1.7;" data-i18n="about_p1">
             With over 15 years of experience in the beauty industry, Pauli Hartmann brings salon-quality expertise directly to your door. Trained and certified in a wide range of beauty disciplines, Pauli has built a loyal clientele across Somerset County through her meticulous attention to detail, warm personality, and commitment to making every client feel confident and beautiful.
         </p>
-        <p style="color:var(--text);font-size:0.88rem;line-height:1.7;margin-top:0.8rem;">
+        <p style="color:var(--text);font-size:0.88rem;line-height:1.7;margin-top:0.8rem;" data-i18n="about_p2">
             Whether it's a flawless bridal look, a fresh color treatment, or a relaxing in-home facial, Pauli approaches every appointment with professionalism and genuine care. Her mobile service means you enjoy the luxury of a beauty experience on your schedule, in your own space.
         </p>
     </div>
 
     <div class="card" style="grid-column:span 7;display:flex;flex-direction:column;gap:0.8rem;">
-        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem;">Service Area & Details</h3>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem;" data-i18n="area_title">Service Area & Details</h3>
         <div class="info-block">
-            <div class="info-block-label">📍 Primary Area</div>
-            <div class="info-block-value">Somerset County, NJ — Bridgewater, Somerville, Basking Ridge, Warren, Bernards, Bernardsville, Flemington & surrounding towns</div>
+            <div class="info-block-label" data-i18n="area1_label">📍 Primary Area</div>
+            <div class="info-block-value" data-i18n="area1_val">Somerset County, NJ — Bridgewater, Somerville, Basking Ridge, Warren, Bernards, Bernardsville, Flemington & surrounding towns</div>
         </div>
         <div class="info-block">
-            <div class="info-block-label">🚗 Will Travel</div>
-            <div class="info-block-value">Available to travel beyond Somerset County — contact for availability and travel fee details</div>
+            <div class="info-block-label" data-i18n="area2_label">🚗 Will Travel</div>
+            <div class="info-block-value" data-i18n="area2_val">Available to travel beyond Somerset County — contact for availability and travel fee details</div>
         </div>
         <div class="info-block">
-            <div class="info-block-label">🏠 How It Works</div>
-            <div class="info-block-value">Pauli comes to your home, or you're welcome to visit her. All professional products and tools are brought to you.</div>
+            <div class="info-block-label" data-i18n="area3_label">🏠 How It Works</div>
+            <div class="info-block-value" data-i18n="area3_val">Pauli comes to your home, or you're welcome to visit her. All professional products and tools are brought to you.</div>
         </div>
         <div class="info-block">
-            <div class="info-block-label">📅 Availability</div>
-            <div class="info-block-value">7 days a week — mornings, afternoons, and evenings by appointment</div>
+            <div class="info-block-label" data-i18n="area4_label">📅 Availability</div>
+            <div class="info-block-value" data-i18n="area4_val">7 days a week — mornings, afternoons, and evenings by appointment</div>
         </div>
         <div class="info-block" style="background:rgba(219,164,146,0.08);border-color:rgba(219,164,146,0.25);">
-            <div class="info-block-label" style="color:var(--blush-light);">👰 Bridal & Events</div>
-            <div class="info-block-value">Early morning availability for weddings and special events — book in advance to secure your date</div>
+            <div class="info-block-label" style="color:var(--blush-light);" data-i18n="area5_label">👰 Bridal & Events</div>
+            <div class="info-block-value" data-i18n="area5_val">Early morning availability for weddings and special events — book in advance to secure your date</div>
         </div>
     </div>
 
     <!-- BOOKING -->
     <div class="section-label" id="book">
-        <h2><span></span>Book an Appointment<span></span></h2>
+        <h2><span></span><span data-i18n="section_book">Book an Appointment</span><span></span></h2>
     </div>
 
     <div class="card card-contact">
-        <h2>Let's Get You Glowing ✨</h2>
-        <p class="sub">Fill out the form and Pauli will be in touch within 24 hours to confirm your appointment.</p>
+        <h2 data-i18n="book_title">Let's Get You Glowing ✨</h2>
+        <p class="sub" data-i18n="book_sub">Fill out the form and Pauli will be in touch within 24 hours to confirm your appointment.</p>
 
         <div id="formSuccess" style="display:none;text-align:center;padding:2rem 1rem;">
             <div style="font-size:3rem;margin-bottom:1rem;">✨</div>
-            <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:0.6rem;background:linear-gradient(135deg,#f0cfc5,#DBA492);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">You're all set!</h3>
-            <p style="color:var(--gray);font-size:0.9rem;line-height:1.6;">Thank you for reaching out to Luxe & Glow. Pauli will review your request and get back to you within 24 hours to confirm your appointment.</p>
+            <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:0.6rem;background:linear-gradient(135deg,#f0cfc5,#DBA492);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;" data-i18n="form_success_title">You're all set!</h3>
+            <p style="color:var(--gray);font-size:0.9rem;line-height:1.6;" data-i18n="form_success_sub">Thank you for reaching out to Luxe & Glow. Pauli will review your request and get back to you within 24 hours to confirm your appointment.</p>
         </div>
         <form name="beauty-booking" id="bookingForm" netlify data-netlify="true">
             <input type="hidden" name="form-name" value="beauty-booking">
@@ -921,6 +922,99 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowLeft') lbNav(-1);
     if (e.key === 'ArrowRight') lbNav(1);
 });
+
+// === BILINGUAL TRANSLATION ===
+let currentLang = 'en';
+
+const translations = {
+    en: {
+        nav_services: 'Services', nav_gallery: 'Gallery', nav_reviews: 'Reviews',
+        nav_about: 'About', nav_book: 'Book Now',
+        badge_makeup: '💄 Makeup Specialist', badge_mobile: '🏠 Comes To You',
+        hero_title: 'Beauty<br>On Your Terms',
+        hero_sub: 'Professional beauty services brought to your door. Hair, makeup, color, nails, lashes and more — all in the comfort of your home. Serving Somerset County and surrounding areas.',
+        btn_book: 'Book an Appointment →', btn_services: 'See Services',
+        stat_exp_label: 'Experience', stat_exp_sub: 'Years in beauty',
+        stat_svc_label: 'Services', stat_svc_sub: 'Offered',
+        stat_rating_label: 'Rating', stat_rating_sub: '⭐ Client favorite',
+        stat_area_label: 'Area', stat_area_sub: 'Somerset + surrounding',
+        stat_avail_label: 'Availability', stat_avail_sub: 'Days a week',
+        stat_spec_label: '💄 Specialty', stat_spec_sub: 'Bridal · Events · Daily',
+        section_services: 'Services', section_gallery: 'Gallery',
+        section_reviews: 'Client Reviews', section_about: 'About Pauli',
+        section_book: 'Book an Appointment',
+        svc1_name: 'Makeup', svc1_desc: 'Full glam, natural, bridal, events, and everyday looks. Airbrush available.',
+        svc2_name: 'Haircuts & Styling', svc2_desc: 'Cuts, trims, blowouts, and special occasion styling for all hair types.',
+        svc3_name: 'Color & Highlights', svc3_desc: 'Full color, highlights, balayage, toning, and color correction.',
+        svc4_name: 'Nails', svc4_desc: 'Manicures, pedicures, gel, and nail art in the comfort of your home.',
+        svc5_name: 'Lashes & Brows', svc5_desc: 'Lash extensions, lash lifts, brow shaping, tinting, and lamination.',
+        svc6_name: 'Facials & Skincare', svc6_desc: 'Cleansing, exfoliating, and hydrating facials customized to your skin type.',
+        svc7_name: 'Waxing', svc7_desc: 'Brow, lip, chin, and full-face waxing for smooth, clean results.',
+        svc8_name: 'Bridal Packages', svc8_desc: 'Complete bridal beauty packages — hair, makeup, and more — for your big day.',
+        svc9_name: 'Mobile & In-Home', svc9_desc: 'Come to you anywhere in Somerset County. No salon required — just you, relaxed.',
+        about_title: 'Licensed Cosmetologist · Makeup Artist · Somerset County, NJ',
+        about_p1: 'With over 15 years of experience in the beauty industry, Pauli Hartmann brings salon-quality expertise directly to your door. Trained and certified in a wide range of beauty disciplines, Pauli has built a loyal clientele across Somerset County through her meticulous attention to detail, warm personality, and commitment to making every client feel confident and beautiful.',
+        about_p2: 'Whether it\'s a flawless bridal look, a fresh color treatment, or a relaxing in-home facial, Pauli approaches every appointment with professionalism and genuine care. Her mobile service means you enjoy the luxury of a beauty experience on your schedule, in your own space.',
+        area_title: 'Service Area & Details',
+        area1_label: '📍 Primary Area', area1_val: 'Somerset County, NJ — Bridgewater, Somerville, Basking Ridge, Warren, Bernards, Bernardsville, Flemington & surrounding towns',
+        area2_label: '🚗 Will Travel', area2_val: 'Available to travel beyond Somerset County — contact for availability and travel fee details',
+        area3_label: '🏠 How It Works', area3_val: 'Pauli comes to your home, or you\'re welcome to visit her. All professional products and tools are brought to you.',
+        area4_label: '📅 Availability', area4_val: '7 days a week — mornings, afternoons, and evenings by appointment',
+        area5_label: '👰 Bridal & Events', area5_val: 'Early morning availability for weddings and special events — book in advance to secure your date',
+        book_title: 'Let\'s Get You Glowing ✨', book_sub: 'Fill out the form and Pauli will be in touch within 24 hours to confirm your appointment.',
+        form_success_title: 'You\'re all set!', form_success_sub: 'Thank you for reaching out to Luxe & Glow. Pauli will review your request and get back to you within 24 hours to confirm your appointment.',
+    },
+    es: {
+        nav_services: 'Servicios', nav_gallery: 'Galería', nav_reviews: 'Reseñas',
+        nav_about: 'Sobre Pauli', nav_book: 'Reservar Ahora',
+        badge_makeup: '💄 Especialista en Maquillaje', badge_mobile: '🏠 Vamos a Ti',
+        hero_title: 'Belleza<br>A Tu Manera',
+        hero_sub: 'Servicios de belleza profesionales en la comodidad de tu hogar. Cabello, maquillaje, color, uñas, pestañas y más. Atendemos el Condado de Somerset y sus alrededores.',
+        btn_book: 'Hacer una Cita →', btn_services: 'Ver Servicios',
+        stat_exp_label: 'Experiencia', stat_exp_sub: 'Años en el sector',
+        stat_svc_label: 'Servicios', stat_svc_sub: 'Disponibles',
+        stat_rating_label: 'Calificación', stat_rating_sub: '⭐ Favorita de clientes',
+        stat_area_label: 'Área', stat_area_sub: 'Somerset y alrededores',
+        stat_avail_label: 'Disponibilidad', stat_avail_sub: 'Días a la semana',
+        stat_spec_label: '💄 Especialidad', stat_spec_sub: 'Novias · Eventos · Diario',
+        section_services: 'Servicios', section_gallery: 'Galería',
+        section_reviews: 'Reseñas de Clientes', section_about: 'Sobre Pauli',
+        section_book: 'Hacer una Cita',
+        svc1_name: 'Maquillaje', svc1_desc: 'Glamour completo, natural, nupcial, eventos y looks del día a día. Aerógrafo disponible.',
+        svc2_name: 'Cortes y Peinados', svc2_desc: 'Cortes, retoques, brushings y peinados de ocasión especial para todo tipo de cabello.',
+        svc3_name: 'Color y Mechas', svc3_desc: 'Color completo, mechas, balayage, tonificación y corrección de color.',
+        svc4_name: 'Uñas', svc4_desc: 'Manicura, pedicura, gel y nail art en la comodidad de tu hogar.',
+        svc5_name: 'Pestañas y Cejas', svc5_desc: 'Extensiones, lifting de pestañas, depilación y tinte de cejas, y laminado.',
+        svc6_name: 'Faciales y Cuidado de Piel', svc6_desc: 'Faciales de limpieza, exfoliación e hidratación personalizados para tu tipo de piel.',
+        svc7_name: 'Depilación con Cera', svc7_desc: 'Cejas, labio, mentón y depilación facial completa para resultados suaves y limpios.',
+        svc8_name: 'Paquetes Nupciales', svc8_desc: 'Paquetes completos de belleza nupcial — cabello, maquillaje y más — para tu gran día.',
+        svc9_name: 'Servicio a Domicilio', svc9_desc: 'Vamos donde tú estés en el Condado de Somerset. Sin salón necesario — solo tú, relajada.',
+        about_title: 'Cosmetóloga Licenciada · Maquilladora Profesional · Condado de Somerset, NJ',
+        about_p1: 'Con más de 15 años de experiencia en la industria de la belleza, Pauli Hartmann lleva su experiencia de calidad de salón directamente a tu puerta. Capacitada y certificada en una amplia gama de disciplinas de belleza, Pauli ha construido una clientela fiel en todo el Condado de Somerset gracias a su meticulosa atención al detalle, su personalidad cálida y su compromiso de hacer que cada cliente se sienta segura y hermosa.',
+        about_p2: 'Ya sea un look nupcial impecable, un tratamiento de color fresco o un facial relajante en casa, Pauli aborda cada cita con profesionalismo y cuidado genuino. Su servicio móvil significa que disfrutas del lujo de una experiencia de belleza en tu horario y en tu propio espacio.',
+        area_title: 'Área de Servicio y Detalles',
+        area1_label: '📍 Área Principal', area1_val: 'Condado de Somerset, NJ — Bridgewater, Somerville, Basking Ridge, Warren, Bernards, Bernardsville, Flemington y pueblos cercanos',
+        area2_label: '🚗 También Viajamos', area2_val: 'Disponible para viajar más allá del Condado de Somerset — contáctanos para disponibilidad y tarifas de desplazamiento',
+        area3_label: '🏠 Cómo Funciona', area3_val: 'Pauli va a tu casa, o puedes visitarla a ella. Todos los productos y herramientas profesionales son llevados a ti.',
+        area4_label: '📅 Disponibilidad', area4_val: '7 días a la semana — mañanas, tardes y noches con cita previa',
+        area5_label: '👰 Novias y Eventos', area5_val: 'Disponibilidad temprana por la mañana para bodas y eventos especiales — reserva con anticipación para asegurar tu fecha',
+        book_title: '¡Brilla Como Mereces! ✨', book_sub: 'Completa el formulario y Pauli se pondrá en contacto contigo dentro de 24 horas para confirmar tu cita.',
+        form_success_title: '¡Todo listo!', form_success_sub: 'Gracias por contactar a Luxe & Glow. Pauli revisará tu solicitud y te responderá dentro de 24 horas para confirmar tu cita.',
+    }
+};
+
+function toggleLang() {
+    currentLang = currentLang === 'en' ? 'es' : 'en';
+    const btn = document.getElementById('lang-btn');
+    btn.textContent = currentLang === 'en' ? 'ES' : 'EN';
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[currentLang][key] !== undefined) {
+            el.innerHTML = translations[currentLang][key];
+        }
+    });
+    document.documentElement.lang = currentLang;
+}
 
 // Form submission handler
 const form = document.getElementById('bookingForm');

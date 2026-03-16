@@ -1032,7 +1032,22 @@ function toggleLang() {
     document.getElementById('lang-banner-es').style.display = currentLang === 'es' ? 'inline' : 'none';
 }
 
-// Form submission — handled by Formsubmit.co (auto-reply enabled)
+const pf = document.getElementById('bookingForm');
+if (pf) {
+    pf.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = pf.querySelector('button[type="submit"],#submitBtn');
+        if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; }
+        const formData = new FormData(pf);
+        const data = Object.fromEntries(formData.entries());
+        try {
+            await fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(formData).toString() });
+            await fetch('/.netlify/functions/confirm', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data) });
+        } catch(err) {}
+        pf.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+    });
+}
 </script>
 </body>
 </html>
